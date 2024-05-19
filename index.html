@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <title>WB-home-page</title>
+    <style>
+        @keyframes gradient-background {
+            0% {background: red;}
+            25% {background: yellow;}
+            50% {background: blue;}
+            75% {background: green;}
+            100% {background: red;}
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: gradient-background 5s infinite;
+        }
+        .search-container {
+            text-align: center;
+            border-radius: 15px;
+            padding: 20px;
+            background: white;
+        }
+        input[type="text"], input[type="submit"] {
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 600px;
+            height: 30px;
+            padding: 3px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            height: 36px;
+            background: #f8f8f8;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h2>Home page</h2>
+        <form action="https://www.google.com/search" method="get">
+            <input type="text" name="q" autocomplete="off">
+            <br><br>
+            <input type="submit" value="Szukaj">
+        </form>
+    </div>
+</body>
+</html>
