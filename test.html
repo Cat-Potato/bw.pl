@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <title>WB-home-page</title>
+    <style>
+        @keyframes gradient-background {
+            0% {background: red;}
+            25% {background: yellow;}
+            50% {background: blue;}
+            75% {background: green;}
+            100% {background: red;}
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: gradient-background 5s infinite;
+        }
+        .search-container {
+            text-align: center;
+            border-radius: 15px;
+            padding: 20px;
+            background: transparent;
+            color: white;
+        }
+        input[type="text"], input[type="submit"] {
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 600px;
+            height: 30px;
+            padding: 3px;
+            font-size: 16px;
+            background: white;
+            color: black;
+        }
+        input[type="submit"] {
+            height: 36px;
+            background: #f8f8f8;
+            font-size: 14px;
+        }
+        #newWindowButton {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: none;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 14% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 10%;
+            border-radius: 15px; 
+            text-align: center; 
+        }
+        .modal-content button {
+            display: block; 
+            width: 100px; 
+            height: 100px; 
+            margin: 10px auto; 
+            border-radius: 50%; 
+        }
+        /* Dodajemy style dla przycisku Autora */
+        #authorButton {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: none;
+            cursor: pointer;
+        }
+        /* Dodajemy style dla okna modalnego Autora */
+        #authorModal .modal-content {
+            width: 30%; /* Zwiększona szerokość */
+        }
+    </style>
+    <script>
+        function openModal() {
+            document.getElementById('myModal').style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+        function disableAnimation() {
+            document.body.style.animation = 'none';
+        }
+        /* Dodajemy funkcje dla okna modalnego Autora */
+        function openAuthorModal() {
+            document.getElementById('authorModal').style.display = "block";
+        }
+        function closeAuthorModal() {
+            document.getElementById('authorModal').style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="search-container">
+        <h2>Home page</h2>
+        <form action="https://www.google.com/search" method="get">
+            <input type="text" name="q" autocomplete="off">
+            <br><br>
+            <input type="submit" value="Szukaj">
+        </form>
+        <button id="newWindowButton" onclick="openModal()">Funkcję i Dodatki</button>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal()">Zamknij</span>
+            <button onclick="window.location.href='https://z1emniakpl.github.io/bw.pl/coming-soon.html'">Wkrótce</button>
+            <button onclick="window.location.href='https://z1emniakpl.github.io/bw.pl/coming-soon.html'">Wkrótce</button>
+            <button onclick="disableAnimation()">Wyłącz animację tła</button>
+        </div>
+    </div>
+    <!-- Dodajemy przycisk Autora -->
+    <button id="authorButton" onclick="openAuthorModal()">Autor</button>
+    <!-- Dodajemy okno modalne Autora -->
+    <div id="authorModal" class="modal">
+        <div class="modal-content">
+            <span onclick="closeAuthorModal()">Zamknij</span>
+            <p>Autor: Imię i nazwisko</p>
+            <p><a href="https://github.com/username">Profil na GitHub</a></p>
+        </div>
+    </div>
+</body>
+</html>
