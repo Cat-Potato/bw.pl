@@ -51,7 +51,6 @@
             border: none;
             cursor: pointer;
         }
-        /* Zmodyfikowane style dla okna modalnego */
         .modal {
             display: none;
             position: fixed;
@@ -65,10 +64,10 @@
         }
         .modal-content {
             background-color: #fefefe;
-            margin: 14% auto; /* Zwiększony margines */
+            margin: 14% auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 10%; /* Zmniejszona szerokość */
+            width: 10%;
             border-radius: 15px; 
             text-align: center; 
         }
@@ -78,6 +77,20 @@
             height: 100px; 
             margin: 10px auto; 
             border-radius: 50%; 
+        }
+        /* Dodajemy style dla przycisku Autora */
+        #authorButton {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: none;
+            cursor: pointer;
+        }
+        /* Dodajemy style dla okna modalnego Autora */
+        #authorModal .modal-content {
+            width: 30%; /* Zwiększona szerokość */
         }
     </style>
     <script>
@@ -89,6 +102,13 @@
         }
         function disableAnimation() {
             document.body.style.animation = 'none';
+        }
+        /* Dodajemy funkcje dla okna modalnego Autora */
+        function openAuthorModal() {
+            document.getElementById('authorModal').style.display = "block";
+        }
+        function closeAuthorModal() {
+            document.getElementById('authorModal').style.display = "none";
         }
     </script>
 </head>
@@ -102,13 +122,22 @@
         </form>
         <button id="newWindowButton" onclick="openModal()">Funkcję i Dodatki</button>
     </div>
-    <!-- Zmodyfikowane okno modalne -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span onclick="closeModal()">Zamknij</span>
             <button onclick="window.location.href='https://z1emniakpl.github.io/bw.pl/coming-soon.html'">Wkrótce</button>
             <button onclick="window.location.href='https://z1emniakpl.github.io/bw.pl/coming-soon.html'">Wkrótce</button>
             <button onclick="disableAnimation()">Wyłącz animację tła</button>
+        </div>
+    </div>
+    <!-- Dodajemy przycisk Autora -->
+    <button id="authorButton" onclick="openAuthorModal()">Autor</button>
+    <!-- Dodajemy okno modalne Autora -->
+    <div id="authorModal" class="modal">
+        <div class="modal-content">
+            <span onclick="closeAuthorModal()">Zamknij</span>
+            <p>Autor: Imię i nazwisko</p>
+            <p><a href="https://github.com/username">Profil na GitHub</a></p>
         </div>
     </div>
 </body>
