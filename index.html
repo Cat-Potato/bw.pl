@@ -44,7 +44,53 @@
             background: #f8f8f8;
             font-size: 14px;
         }
+        #newWindowButton {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: none;
+            cursor: pointer;
+        }
+        /* Zmodyfikowane style dla okna modalnego */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 14% auto; /* Zwiększony margines */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 10%; /* Zmniejszona szerokość */
+            border-radius: 15px; 
+            text-align: center; 
+        }
+        .modal-content button {
+            display: block; 
+            width: 100px; 
+            height: 100px; 
+            margin: 10px auto; 
+            border-radius: 50%; 
+        }
     </style>
+    <script>
+        function openModal() {
+            document.getElementById('myModal').style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+        function disableAnimation() {
+            document.body.style.animation = 'none';
+        }
+    </script>
 </head>
 <body>
     <div class="search-container">
@@ -54,6 +100,16 @@
             <br><br>
             <input type="submit" value="Szukaj">
         </form>
+        <button id="newWindowButton" onclick="openModal()">Funkcję i Dodatki</button>
+    </div>
+    <!-- Zmodyfikowane okno modalne -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal()">Zamknij</span>
+            <button onclick="window.location.href='https://www.google.com'">Google 1</button>
+            <button onclick="window.location.href='https://www.google.com'">Google 2</button>
+            <button onclick="disableAnimation()">Wyłącz animację tła</button>
+        </div>
     </div>
 </body>
 </html>
