@@ -44,16 +44,24 @@
             background: #f8f8f8;
             font-size: 14px;
         }
-        #newWindowButton {
-            margin-top: 20px;
+        #newWindowButton, #authorButton {
             padding: 10px;
             background-color: #f8f8f8;
             border: none;
             cursor: pointer;
-            border-radius: 50%; /* Dodajemy zaokrąglenie */
-            width: 50px; /* Dodajemy szerokość */
-            height: 50px; /* Dodajemy wysokość */
-            text-align: center; /* Wyśrodkowujemy tekst */
+            border-radius: 5px;
+            width: 100px;
+            height: 36px;
+            font-size: 14px;
+            text-align: center;
+        }
+        #newWindowButton {
+            margin-top: 20px;
+        }
+        #authorButton {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
         }
         .modal {
             display: none;
@@ -82,24 +90,6 @@
             margin: 10px auto; 
             border-radius: 50%; 
         }
-        /* Dodajemy style dla przycisku Autora */
-        #authorButton {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            padding: 10px;
-            background-color: #f8f8f8;
-            border: none;
-            cursor: pointer;
-            border-radius: 50%; /* Dodajemy zaokrąglenie */
-            width: 50px; /* Dodajemy szerokość */
-            height: 50px; /* Dodajemy wysokość */
-            text-align: center; /* Wyśrodkowujemy tekst */
-        }
-        /* Dodajemy style dla okna modalnego Autora */
-        #authorModal .modal-content {
-            width: 30%; /* Zwiększona szerokość */
-        }
     </style>
     <script>
         function openModal() {
@@ -111,7 +101,6 @@
         function disableAnimation() {
             document.body.style.animation = 'none';
         }
-        /* Dodajemy funkcje dla okna modalnego Autora */
         function openAuthorModal() {
             document.getElementById('authorModal').style.display = "block";
         }
@@ -128,7 +117,7 @@
             <br><br>
             <input type="submit" value="Szukaj">
         </form>
-        <button id="newWindowButton" onclick="openModal()">D</button>
+        <button id="newWindowButton" onclick="openModal()">Dodatki</button>
     </div>
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -138,14 +127,12 @@
             <button onclick="disableAnimation()">Wyłącz animację tła</button>
         </div>
     </div>
-    <!-- Dodajemy przycisk Autora -->
-    <button id="authorButton" onclick="openAuthorModal()">A</button>
-    <!-- Dodajemy okno modalne Autora -->
+    <button id="authorButton" onclick="openAuthorModal()">Autor</button>
     <div id="authorModal" class="modal">
         <div class="modal-content">
             <span onclick="closeAuthorModal()">Zamknij</span>
-            <p>Autor: Imię i nazwisko</p>
-            <p><a href="https://github.com/username">Profil na GitHub</a></p>
+            <p>Autor: Z1emniak</p>
+            <p><a href="https://github.com/Z1emniakPL/">Profil na GitHub</a></p>
         </div>
     </div>
 </body>
